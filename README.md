@@ -17,4 +17,3 @@ See the example in the [it.nicolaamatucci.ormlite.example](https://github.com/ni
 ##Dependencies
 
 * [OrmLite](http://ormlite.com/)
-* [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)
