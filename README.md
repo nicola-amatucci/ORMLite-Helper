@@ -11,7 +11,7 @@ A set of simple Helper Class to ease the use of the [OrmLite](http://ormlite.com
 
 Example:
 
-See the example in the [it.nicolaamatucci.ormlite.example](https://github.com/nicola-amatucci/ORMLite-Helper/tree/master/it/nicola_amatucci/ormlite/example) package.
+See the example in the [it.nicolaamatucci.ormlite.example](https://github.com/nicola-amatucci/ORMLite-Helper/tree/master/src/it/nicolaamatucci/ormlite/example) package.
 
 
 ##Dependencies
