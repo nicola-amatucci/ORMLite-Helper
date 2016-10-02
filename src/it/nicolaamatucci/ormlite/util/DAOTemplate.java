@@ -1,5 +1,6 @@
 package it.nicolaamatucci.ormlite.util;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,7 +24,10 @@ public class DAOTemplate<T> {
 		try {
 			Dao<T, Integer> dao = DaoManager.createDao(DBConnection.getConnection(), this.typeParameterClass);
 			index = dao.create(object);
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -38,7 +42,10 @@ public class DAOTemplate<T> {
 		try {
 			Dao<T, Integer> dao = DaoManager.createDao(DBConnection.getConnection(), this.typeParameterClass);
 			index = dao.update(object);
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -53,7 +60,10 @@ public class DAOTemplate<T> {
 		try {
 			Dao<T, Integer> dao = DaoManager.createDao(DBConnection.getConnection(), this.typeParameterClass);
 			index = dao.delete(object);
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -63,14 +73,18 @@ public class DAOTemplate<T> {
 
 	public T findById(int id) {
 
-		T wishList = null;
+		T list = null;
 		try {
 			Dao<T, Integer> dao = DaoManager.createDao(DBConnection.getConnection(), this.typeParameterClass);
-			wishList = dao.queryForId(id);
+			list = dao.queryForId(id);
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return wishList;
+		
+		return list;
 
 	}
 
@@ -81,7 +95,10 @@ public class DAOTemplate<T> {
 		try {
 			Dao<T, Integer> dao = DaoManager.createDao(DBConnection.getConnection(), this.typeParameterClass);
 			items = dao.queryForAll();
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 

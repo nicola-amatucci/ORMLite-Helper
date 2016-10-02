@@ -1,5 +1,6 @@
 package it.nicolaamatucci.ormlite.example;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -26,9 +27,13 @@ public class UserDAO extends DAOTemplate<User>{
 				user = results.get(0);
 			}
 			
+			dao.getConnectionSource().close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		
 		return user;
 
 	}
