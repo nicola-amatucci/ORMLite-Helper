@@ -5,7 +5,7 @@ A set of simple Helper Class to ease the use of the [OrmLite](http://ormlite.com
 
 ##Quick Start
 
-1. Set the database username and password in Class it.nicolaamatucci.ormlite.util.DBConnection 
+1. Set the database URL, your username and password in Class it.nicolaamatucci.ormlite.util.DBConnection 
 
 2. Extend Class it.nicolaamatucci.ormlite.util.DBConnection.DAOTemplate
 
